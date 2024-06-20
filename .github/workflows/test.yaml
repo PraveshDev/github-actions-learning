@@ -12,9 +12,9 @@ jobs:
     my-second-job:
         runs-on: ubuntu-latest
         steps:
-            - name: Hello Pass 1
+            - name: Print Trigger Event
               run: |
-                echo "Hello Github Actions Pass 1"
+                echo "${{ github.event_name }}"
                 echo "Hello From Github Actions Pass 1"
 
             - name: Hello Pass 2
