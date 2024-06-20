@@ -5,9 +5,19 @@ jobs:
     my-first-job:
         runs-on: ubuntu-latest
         steps: 
-            - run: 'echo "Hello Github Actions"'
+            - name: Hello Fail
+              run: exit 1
 
     my-second-job:
         runs-on: ubuntu-latest
-        steps: 
-            - run: 'echo "Hello Github Actions"'
+        steps:
+            - name: Hello Pass 1
+              run: |
+                echo "Hello Github Actions Pass 1"
+                echo "Hello From Github Actions Pass 1"
+
+            - name: Hello Pass 2
+              run: |
+                echo "Hello Github Actions Pass 2"
+                echo "Hello From Github Actions Pass 2"
+  
